@@ -1,0 +1,492 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eaf4ff;
+    color: #243047;
+    min-height: 100vh;
+}
+
+.app {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+.encabezado {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    border-radius: 22px;
+    box-shadow: 0 5px 12px #0002;
+}
+
+.personaje {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+.encabezado h1 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.encabezado p {
+    font-size: 14px;
+}
+
+.bienvenida {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.bienvenida h2 {
+    color: #1d4ed8;
+    margin-bottom: 8px;
+}
+
+.menu {
+    display: grid;
+    gap: 15px;
+}
+
+.boton {
+    border: none;
+    border-radius: 18px;
+    padding: 18px;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #243047;
+    font-weight: bold;
+    box-shadow: 0 4px 8px #0002;
+}
+
+.boton span {
+    font-size: 17px;
+}
+
+.boton:active {
+    transform: scale(0.97);
+}
+
+.aprender {
+    background: #a7f3d0;
+}
+
+.practicar {
+    background: #fde68a;
+}
+
+.logros {
+    background: #ddd6fe;
+}
+
+.contenido {
+    background: white;
+    border-radius: 18px;
+    margin-top: 25px;
+    padding: 22px;
+    text-align: center;
+    min-height: 120px;
+}
+
+.contenido h2 {
+    color: #2563eb;
+    margin-bottom: 12px;
+}
+
+.contenido p {
+    line-height: 1.5;
+}
+
+/* SELECCION DE TABLAS */
+
+.tablas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.tabla-boton {
+    border: none;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 17px 8px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px #0001;
+}
+
+.tabla-boton:active {
+    transform: scale(0.96);
+    background: #bfdbfe;
+}
+
+/* LISTA DE MULTIPLICACIONES */
+
+.lista-operaciones {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.operacion {
+    background: #ecfdf5;
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 19px;
+}
+
+.operacion strong {
+    color: #059669;
+    font-size: 22px;
+}
+
+/* BOTON VOLVER */
+
+.volver-boton {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 15px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.volver-boton:active {
+    background: #1d4ed8;
+    transform: scale(0.98);
+}
+
+/* JUEGO DE MULTIPLICACIONES */
+
+.progreso-juego {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 12px;
+    border-radius: 12px;
+    margin: 18px 0;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.pregunta {
+    background: #eff6ff;
+    border: 3px solid #bfdbfe;
+    border-radius: 18px;
+    padding: 25px 10px;
+    margin: 20px 0;
+    font-size: 36px;
+    font-weight: bold;
+    color: #1d4ed8;
+}
+
+.respuestas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.respuesta-boton {
+    border: none;
+    background: #ddd6fe;
+    color: #4c1d95;
+    padding: 20px 5px;
+    border-radius: 14px;
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px #0002;
+}
+
+.respuesta-boton:active {
+    transform: scale(0.95);
+}
+
+.respuesta-boton:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.respuesta-correcta {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 18px;
+    border-radius: 14px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.respuesta-incorrecta {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 18px;
+    border-radius: 14px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.respuesta-correcta p,
+.respuesta-incorrecta p {
+    margin-top: 8px;
+}
+
+.resultado-final {
+    background: #f5f3ff;
+    border-radius: 18px;
+    padding: 22px;
+    margin: 20px 0;
+}
+
+.resultado-final strong {
+    display: block;
+    color: #7c3aed;
+    font-size: 30px;
+    margin: 12px 0;
+}
+
+.resultado-final p {
+    margin: 8px 0;
+}
+
+/* =====================================
+   APRENDIZAJE VISUAL
+===================================== */
+
+.leccion-visual {
+    width: 100%;
+}
+
+.leccion-visual h2 {
+    color: #2563eb;
+    margin-bottom: 18px;
+}
+
+.leccion-visual h3 {
+    color: #7c3aed;
+    margin: 20px 0 12px;
+}
+
+.mensaje-buho {
+    background: #fef3c7;
+    color: #78350f;
+    padding: 16px;
+    border-radius: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* CONTROLES DE GRUPOS */
+
+.controles-grupos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.control-visual {
+    background: #eff6ff;
+    border: 2px solid #bfdbfe;
+    border-radius: 14px;
+    padding: 12px 5px;
+}
+
+.control-visual p {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.control-visual strong {
+    display: inline-block;
+    min-width: 28px;
+    font-size: 22px;
+    color: #1d4ed8;
+}
+
+.control-visual button {
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* GRUPOS DE OBJETOS */
+
+.grupos-visual {
+    display: grid;
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.grupo-visual {
+    background: #ecfdf5;
+    border: 2px dashed #6ee7b7;
+    border-radius: 15px;
+    padding: 14px 8px;
+}
+
+.nombre-grupo {
+    display: block;
+    color: #047857;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.objetos-grupo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    min-height: 48px;
+}
+
+.objeto-animado {
+    display: inline-block;
+    font-size: 32px;
+    animation: aparecerObjeto 0.5s ease both;
+}
+
+.objeto-animado:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.objeto-animado:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.objeto-animado:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.objeto-animado:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+@keyframes aparecerObjeto {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.5);
+    }
+
+    70% {
+        transform: translateY(-5px) scale(1.15);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* EXPLICACION MATEMATICA */
+
+.explicacion-visual {
+    background: #f5f3ff;
+    border-radius: 16px;
+    padding: 18px 10px;
+    margin: 20px 0;
+}
+
+.explicacion-visual p {
+    margin: 12px 0;
+}
+
+.suma-visual {
+    background: #dbeafe;
+    color: #1e40af;
+    border-radius: 12px;
+    padding: 15px 5px;
+    margin: 12px 0;
+    font-size: 21px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.multiplicacion-visual {
+    background: #d1fae5;
+    color: #065f46;
+    border-radius: 12px;
+    padding: 18px 5px;
+    margin: 12px 0;
+    font-size: 29px;
+    font-weight: bold;
+}
+
+.boton-secundario {
+    background: #64748b;
+}
+
+/* ACCESIBILIDAD Y MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* DISEÑO PARA PANTALLAS PEQUEÑAS */
+
+@media (max-width: 360px) {
+    .app {
+        padding: 12px;
+    }
+
+    .contenido {
+        padding: 15px;
+    }
+
+    .controles-grupos {
+        grid-template-columns: 1fr;
+    }
+
+    .multiplicacion-visual {
+        font-size: 24px;
+    }
+
+    .suma-visual {
+        font-size: 18px;
+    }
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 25px;
+    color: #64748b;
+}

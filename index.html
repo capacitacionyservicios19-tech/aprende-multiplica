@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="description" content="Aprende las tablas de multiplicar jugando.">
+
+    <title>Aprende y Multiplica</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="encabezado">
+            <div class="personaje">🦉</div>
+            <h1>¡Aprende y Multiplica!</h1>
+            <p>Las matemáticas pueden ser divertidas</p>
+        </header>
+
+        <section class="bienvenida">
+            <h2>¡Hola, pequeño explorador!</h2>
+            <p>¿Qué aventura quieres comenzar hoy?</p>
+        </section>
+
+        <section class="menu">
+
+            <button class="boton aprender"
+                onclick="mostrarSeccion('aprender')">
+                📚
+                <span>Aprender las tablas</span>
+            </button>
+
+            <button class="boton practicar"
+                onclick="mostrarSeccion('practicar')">
+                🎮
+                <span>Jugar y practicar</span>
+            </button>
+
+            <button class="boton logros"
+                onclick="mostrarSeccion('logros')">
+                🏆
+                <span>Mis logros</span>
+            </button>
+
+        </section>
+
+        <section id="contenido" class="contenido">
+
+            <h2>🌟 ¡Prepárate para aprender!</h2>
+            <p>Elige una aventura para comenzar.</p>
+
+        </section>
+
+        <footer>
+            <p>Aprende jugando • Aprende multiplicando</p>
+        </footer>
+
+    </main>
+
+    <script src="js/aprendizaje.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("./service-worker.js")
+                    .catch((error) => {
+                        console.error("Error al registrar el service worker:", error);
+                    });
+            });
+        }
+    </script>
+
+</body>
+</html>
